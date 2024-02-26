@@ -1,31 +1,26 @@
 # snow
 
-Welcome to the README for my NixOS configurations!
+This repository contains my personal NixOS configurations. It includes system configurations, module configurations, host-specific settings, and other related files.
 
-## File Structure
+## Why NixOS?
 
-```ini
-├── flake.lock
-├── flake.nix
-├── home
-│   ├── default.nix
-│   ├── home.nix
-│   └── programs
-│       ├── browsers.nix
-│       ├── common.nix
-│       ├── default.nix
-│       ├── git.nix
-│       ├── media.nix
-│       └── xdg.nix
-├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       └── hardware-configuration.nix
-└── modules
-    ├── gnome.nix
-    ├── system.nix
-    └── username.nix
+NixOS offers several compelling advantages over traditional Linux distributions:
+
+1. **Declarative Configuration**: Simplify system management with a single configuration file.
+2. **Immutable System**: Ensure stability by treating the OS as immutable.
+3. **Atomic Upgrades**: Switch between configurations without risk.
+4. **Package Management**: Use a functional package manager for reproducible environments.
+5. **Hermetic Environments**: Isolate dependencies for consistent development and deployment.
+
+## Usage
+### Installation
+My laptop configuration:
+
+```
+sudo nixos-rebuild switch --flake path:.#laptop
+```
+
+My desktop configuration:
+```
+sudo nixos-rebuild switch --flake path:.#desktop
 ```

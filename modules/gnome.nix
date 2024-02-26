@@ -1,13 +1,5 @@
 { pkgs, ... }:
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Configuration focuses on GNOME desktop environment customization.
-  # These settings aim to enhance the user experience and customize 
-  # the GNOME desktop environment according to personal preferences.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   # Enable X server and GNOME desktop manager.
   services.xserver = {

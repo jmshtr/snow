@@ -1,13 +1,6 @@
 {
   description = "NixOS configuration of James Hunter";
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Looking for a beginner-friendly NixOS & Flakes tutorial?
-  # Check out: https://nixos-and-flakes.thiscute.world/ !
-  #
-  # ------------------------------------------------------------------------------------------
-
   # Input sources for the Nix expressions.
   inputs = {
     # Pin our primary nixpkgs repository. This is the main nixpkgs repository

@@ -1,19 +1,11 @@
 { pkgs, lib, ... }: 
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Configuration file aimed to provide a comprehensive setup for system and 
-  # user environments, including font management, sound configuration, 
-  # and various other system services.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   # Define a user configuration
   users.users.james = {
     isNormalUser = true;
     description = "James";
-    extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" ];
+    extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "vboxusers" ];
   };
 
   # Given the users in this list the right to specify additional substituters via:
@@ -53,12 +45,6 @@
      enableWideVine = true;
     };
   };
-
-#  nixpkgs.config = {
-#   chromium = {
-#     enableWideVine = true;
-#    };
-#  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -107,6 +93,7 @@
   in
   [ facetimehd ] ++ */(with pkgs; [
     python3
+    poetry
     libgcc
     git
   ]);

@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Configuration to ensure proper hardware support for my laptop, including Wi-Fi, 
-  # touchpad, and power management features like screen-lock-on-suspend.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   imports = [
     ../../modules/system.nix
@@ -56,6 +49,10 @@
   
   # Enable Hyprland
   programs.hyprland.enable = true;
+
+  # Enable VirtualBox & Oracle Extensions
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

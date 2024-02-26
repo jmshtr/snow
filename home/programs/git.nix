@@ -1,12 +1,5 @@
 { pkgs, ...}: 
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Installs the GitHub command-line tool ('gh') in the user's home environment. 
-  # Enables Git and sets up the user's name and email for Git commits.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   # Packages to be installed in the home environment, including GitHub CLI.
   home.packages = [pkgs.gh];

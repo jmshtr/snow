@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # This configuration is tailored for a desktop system with AMD GPU, 
-  # enabling gaming features and ensuring proper driver support.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   imports = [
     ../../modules/system.nix

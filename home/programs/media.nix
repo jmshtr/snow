@@ -1,11 +1,5 @@
 { pkgs, config, ... }:
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Sets up media-related configs for controlling and enjoying audio and video content.
-  #
-  # ------------------------------------------------------------------------------------------
-
 {
   # Packages to be installed in the home environment.
   home.packages = with pkgs; [

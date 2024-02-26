@@ -1,12 +1,5 @@
 { config, ... }: 
 
-  # ------------------------------------------------------------------------------------------
-  #
-  # Configures XDG (Cross Desktop Group) settings, which define default 
-  # applications for various MIME types and user directories.
-  #
-  # ------------------------------------------------------------------------------------------
-
 # Browser and associations for XDG MIME types.
 let
   # Default browser.

@@ -6,4 +6,3 @@ Configuration modules for various system components.
 | ------------------ | ---------------------------------------------------- |
 | `gnome.nix`        | Configuration for the GNOME desktop environment.     |
 | `system.nix`       | System-level configuration settings.                 |
-| `username.nix`     | Configuration related to user-specific settings.     |

@@ -1,13 +1,10 @@
-{ pkgs, ...}: 
+{ pkgs, ... }: 
 
 {
-  # Packages to be installed in the home environment, including GitHub CLI.
-  home.packages = [pkgs.gh];
-
-  # Configure Git program settings.
+  home.packages = [ pkgs.gh ];
   programs.git = {
-    enable = true;  # Enable Git
-    userName = "jmshtr";  # Set user name
-    userEmail = "157889640+jmshtr@users.noreply.github.com";  # Set user email
+    enable = true;
+    userName = "jmshtr";
+    userEmail = "157889640+jmshtr@users.noreply.github.com";
   };
 }

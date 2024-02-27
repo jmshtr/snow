@@ -1,11 +1,7 @@
 { config, ... }: 
 
-# Browser and associations for XDG MIME types.
 let
-  # Default browser.
   browser = ["firefox.desktop"];
-
-  # Associations for various MIME types.
   associations = {
     "application/x-extension-htm" = browser;
     "application/x-extension-html" = browser;
@@ -20,7 +16,6 @@ let
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
-
     "audio/*" = ["mpv.desktop"];
     "video/*" = ["mpv.desktop"];
     "image/*" = ["imv.desktop"];
@@ -31,20 +26,13 @@ let
     "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
   };
 in {
-  # Configure XDG settings.
   xdg = {
-    enable = true;  # Enable XDG integration
-
-    # Cache home directory.
+    enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";
-
-    # Configure MIME applications.
     mimeApps = {
       enable = true;
       defaultApplications = associations;
     };
-
-    # Configure user directories.
     userDirs = {
       enable = true;
       createDirectories = true;

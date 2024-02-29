@@ -23,6 +23,7 @@
   ];
 
   environment.systemPackages = (with pkgs; [
+    gnome.gnome-software
     gnome.gnome-tweaks
     adw-gtk3
   ]) ++ (with pkgs.gnomeExtensions; [

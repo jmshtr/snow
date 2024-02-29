@@ -63,6 +63,7 @@
   services = {
     dbus.packages = [pkgs.gcr];
     geoclue2.enable = true;
+    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

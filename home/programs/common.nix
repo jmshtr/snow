@@ -33,5 +33,8 @@
 		tldr                # tldr, a collection of community-driven simplified man pages
 		zellij              # zellij, a terminal workspace with tmux-like features
 		tree                # tree, display directory structures in a tree-like format
+
+		# Communication
+		discord             # Discord, a VoIP, instant messaging and digital distribution platform
 	]);
 }

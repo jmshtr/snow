@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{
+{/*
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind =
@@ -24,7 +24,7 @@
           )
           10)
       );
-  };
+  };*/
 
   # Fixing problems with themes
 #  home.pointerCursor = {

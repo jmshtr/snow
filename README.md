@@ -2,6 +2,12 @@
 
 This repository contains my personal NixOS configurations. It includes system configurations, module configurations, host-specific settings, and other related files.
 
+See an overview of the flake outputs by running: 
+```
+nix flake show github:jmshtr/snow
+```
+
+
 ## Why NixOS?
 
 NixOS offers several compelling advantages over traditional Linux distributions:
@@ -13,7 +19,6 @@ NixOS offers several compelling advantages over traditional Linux distributions:
 5. **Hermetic Environments**: Isolate dependencies for consistent development and deployment.
 
 ## Usage
-### Installation
 My laptop configuration:
 
 ```

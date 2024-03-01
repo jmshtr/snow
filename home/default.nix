@@ -35,7 +35,6 @@
     shellAliases = {};
   };
 
-
   home.sessionVariables = {
     # EDITOR = "emacs";
   };

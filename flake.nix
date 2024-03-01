@@ -1,7 +1,7 @@
 {
   description = "NixOS configuration of James Hunter";
 
-  inputs = {
+  inputs = { # Inputs required for the configuration.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -12,10 +12,12 @@
   outputs = inputs @ { self, nixpkgs, home-manager, ... }: 
   {
     nixosConfigurations = {
+      # Definitions of different NixOS configurations.
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
+          # List of modules to include in the configuration.
           ./hosts/laptop
           home-manager.nixosModules.home-manager
           {
@@ -40,6 +42,13 @@
             home-manager.users.james = import ./home;
           }
         ];
+      };
+
+      # GRUB bootloader configuration
+      boot.loader.grub = {
+        enable = true;
+        version = 2;
+        showBootMessages = true;
       };
     };
   };

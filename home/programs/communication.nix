@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    discord # Discord, a VoIP, instant messaging and digital distribution platform
+    discord          # A VoIP, instant messaging and digital distribution platform
+    betterdiscordctl # A utility for managing BetterDiscord on Linux
   ];
 }

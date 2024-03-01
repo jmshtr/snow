@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  description = "Configuration for my desktop machine.";
-
   imports = [
     ../../modules/system.nix
     ../../modules/gnome.nix

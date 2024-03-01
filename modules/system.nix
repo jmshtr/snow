@@ -1,28 +1,28 @@
 { pkgs, lib, ... }:
 
 {
-  users.users.james = {
+  users.users.james = { # Define user 'james'
     isNormalUser = true;
     description = "James";
     extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "vboxusers" ];
   };
 
-  nix.settings.trusted-users = ["james"];
+  nix.settings.trusted-users = ["james"]; # Set 'james' as a trusted user for Nix.
 
-  nix.settings = {
+  nix.settings = { # Define settings for Nix.
     experimental-features = ["nix-command" "flakes"];
     substituters = ["https://cache.nixos.org"];
     trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="];
     builders-use-substitutes = true;
   };
 
-  nix.gc = {
+  nix.gc = { # Garbage collection settings for Nix.
     automatic = lib.mkDefault true;
     dates = lib.mkDefault "weekly";
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  nixpkgs.config = {
+  nixpkgs.config = { # Configuration settings for Nixpkgs.
     allowUnfree = true;
     allowAliases = false;
     chromium.enableWideVine = true;
@@ -30,27 +30,13 @@
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_NUMERIC = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-    LC_TIME = "en_GB.UTF-8";
+  i18n.extraLocaleSettings = builtins.mapAttrs (name: _: "en_GB.UTF-8") {
+    LC_ADDRESS = null; LC_IDENTIFICATION = null; LC_MEASUREMENT = null; LC_MONETARY = null; 
+    LC_NAME = null; LC_NUMERIC = null; LC_PAPER = null; LC_TELEPHONE = null; LC_TIME = null;
   };
 
   programs.dconf.enable = true;
   networking.firewall.enable = false;
-
-  environment.systemPackages = with pkgs; [
-    python3
-    poetry
-    libgcc
-    git
-  ];
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -60,7 +46,7 @@
 
   security.polkit.enable = true;
 
-  services = {
+  services = { # Additional services configuration.
     dbus.packages = [pkgs.gcr];
     geoclue2.enable = true;
     flatpak.enable = true;

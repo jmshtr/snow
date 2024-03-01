@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  description = "Configuration for my laptop machine.";
-
   imports = [
     ../../modules/system.nix
     ../../modules/gnome.nix
@@ -14,9 +12,10 @@
 
   networking.hostName = "laptop";
 
-  console.keyMap = "uk";
-
-  services.xserver.libinput.enable = true;
+  services.xserver = {
+    libinput.enable = true;
+    videoDrivers = [ "intel" ];
+  };
 
   services.logind.extraConfig = ''
     LidSwitchIgnoreInhibited=False
@@ -25,7 +24,4 @@
   '';
 
   hardware.facetimehd.enable = true;
-
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 }

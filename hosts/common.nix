@@ -8,5 +8,10 @@
 
   networking.networkmanager.enable = true;
 
+  console.keyMap = "uk";
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
   system.stateVersion = "23.11";
 }

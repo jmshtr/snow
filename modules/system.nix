@@ -4,12 +4,18 @@
   users.users.james = { # Define user 'james'
     isNormalUser = true;
     description = "James";
-    extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "vboxusers" ];
+    extraGroups = [ 
+      "wheel" 
+      "video" 
+      "audio" 
+      "disk" 
+      "networkmanager" 
+      "vboxusers" 
+    ];
   };
 
-  nix.settings.trusted-users = ["james"]; # Set 'james' as a trusted user for Nix.
-
   nix.settings = { # Define settings for Nix.
+    trusted-users = ["james"];
     experimental-features = ["nix-command" "flakes"];
     substituters = ["https://cache.nixos.org"];
     trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="];
@@ -40,9 +46,6 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  services.power-profiles-daemon = {
-    enable = true;
-  };
 
   security.polkit.enable = true;
 
@@ -50,6 +53,10 @@
     dbus.packages = [pkgs.gcr];
     geoclue2.enable = true;
     flatpak.enable = true;
+    power-profiles-daemon.enable = true;
+    printing.enable = true;
+    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -57,7 +64,5 @@
       pulse.enable = true;
       jack.enable = true;
     };
-    printing.enable = true;
-    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
   };
 }

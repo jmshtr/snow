@@ -8,8 +8,10 @@
     ./hardware-configuration.nix
   ];
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
   networking.hostName = "desktop";
 

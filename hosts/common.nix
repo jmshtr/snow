@@ -15,8 +15,10 @@
 
   console.keyMap = "uk";
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+  virtualisation = {
+    virtualbox.host.enable = true;
+    docker.enable = true;
+  };
 
   system.stateVersion = "23.11";
 }

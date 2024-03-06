@@ -11,6 +11,7 @@
       "disk" 
       "networkmanager" 
       "vboxusers" 
+      "docker"
     ];
   };
 

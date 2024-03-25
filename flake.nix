@@ -43,13 +43,6 @@
           }
         ];
       };
-
-      # GRUB bootloader configuration
-      boot.loader.grub = {
-        enable = true;
-        version = 2;
-        showBootMessages = true;
-      };
     };
   };
 }

@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ../../modules/system.nix
-    ../../modules/gnome.nix
+    ../../default.nix
     ../common.nix
     ./hardware-configuration.nix
   ];
@@ -13,10 +12,21 @@
   networking.hostName = "laptop";
 
   services.xserver = {
+    xkbVariant = "mac";
     libinput.enable = true;
     videoDrivers = [ "intel" ];
   };
 
+  services.mbpfan = {
+    enable = false;
+    settings.general = {
+      low_temp = 63;
+      high_temp = 76;
+      max_temp = 88;
+    };
+  };
+
+  # Required for screen-lock-on-suspend functionality.
   services.logind.extraConfig = ''
     LidSwitchIgnoreInhibited=False
     HandleLidSwitch=suspend

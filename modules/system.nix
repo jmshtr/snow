@@ -38,8 +38,7 @@
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = builtins.mapAttrs (name: _: "en_GB.UTF-8") {
-    LC_ADDRESS = null; LC_IDENTIFICATION = null; LC_MEASUREMENT = null; LC_MONETARY = null; 
-    LC_NAME = null; LC_NUMERIC = null; LC_PAPER = null; LC_TELEPHONE = null; LC_TIME = null;
+    LC_ADDRESS = null; LC_IDENTIFICATION = null; LC_MEASUREMENT = null; LC_MONETARY = null; LC_NAME = null; LC_NUMERIC = null; LC_PAPER = null; LC_TELEPHONE = null; LC_TIME = null;
   };
 
   programs.dconf.enable = true;
@@ -53,7 +52,6 @@
   services = { # Additional services configuration.
     dbus.packages = [pkgs.gcr];
     geoclue2.enable = true;
-    flatpak.enable = true;
     power-profiles-daemon.enable = true;
     printing.enable = true;
     udev.packages = with pkgs; [gnome.gnome-settings-daemon];

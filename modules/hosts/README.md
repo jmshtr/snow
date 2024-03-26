@@ -6,8 +6,8 @@ Configurations for different hosts.
 
 | Name             | Description                                           |
 | ---------------- | ----------------------------------------------------- |
-| `desktop`        | Configuration for my desktop machine.                   |
-| `laptop`         | Configuration for my laptop machine.                    |
+| `desktop`        | Configuration for my desktop machine.                 |
+| `laptop`         | Configuration for my laptop machine.                  |
 
 ### Common Configuration
 
@@ -19,8 +19,8 @@ Configuration for desktop machines.
 
 | Name                           | Description                                           |
 | ------------------------------ | ----------------------------------------------------- |
-| `default.nix`                  | Default configuration for desktop settings.          |
-| `hardware-configuration.nix`   | Hardware-specific configuration for desktop.         |
+| `default.nix`                  | Default configuration for desktop settings.           |
+| `hardware-configuration.nix`   | Hardware-specific configuration for desktop.          |
 
 ### Laptop
 
@@ -28,5 +28,5 @@ Configuration for laptop machines.
 
 | Name                           | Description                                           |
 | ------------------------------ | ----------------------------------------------------- |
-| `default.nix`                  | Default configuration for laptop settings.           |
-| `hardware-configuration.nix`   | Hardware-specific configuration for laptop.          |
+| `default.nix`                  | Default configuration for laptop settings.            |
+| `hardware-configuration.nix`   | Hardware-specific configuration for laptop.           |

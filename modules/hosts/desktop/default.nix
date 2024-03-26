@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ../../modules/system.nix
-    ../../modules/gnome.nix
+    ../../default.nix
     ../common.nix
     ./hardware-configuration.nix
   ];

@@ -18,7 +18,7 @@
 
         modules = [
           # List of modules to include in the configuration.
-          ./hosts/laptop
+          ./modules/hosts/laptop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -33,7 +33,8 @@
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/desktop
+          # List of modules to include in the configuration.
+          ./modules/hosts/desktop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

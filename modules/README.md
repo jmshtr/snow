@@ -4,6 +4,9 @@ Configuration modules for various system components.
 
 | Name               | Description                                          |
 | ------------------ | ---------------------------------------------------- |
+| `hosts`            | Configurations for different hosts.                  |
+| `default.nix`      | Default configuration for module settings.           |
+| `font.nix`         | Font configuration.                                  |
 | `gnome.nix`        | Configuration for the GNOME desktop environment.     |
-| `kde.nix`          | Configuration for the KDE desktop environment.       |
 | `system.nix`       | System-level configuration settings.                 |
+

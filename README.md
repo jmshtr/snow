@@ -1,5 +1,4 @@
 # snow
-
 This repository contains my personal NixOS configurations. It includes system configurations, module configurations, host-specific settings, and other related files.
 
 See an overview of the flake outputs by running: 
@@ -7,12 +6,10 @@ See an overview of the flake outputs by running:
 nix flake show github:jmshtr/snow
 ```
 
-
 ## Why NixOS?
-
 NixOS offers several compelling advantages over traditional Linux distributions:
 
-1. **Declarative Configuration**: Simplify system management with a single configuration file.
+1. **Declarative Configuration**: Simplify system management with configuration files.
 2. **Immutable System**: Ensure stability by treating the OS as immutable.
 3. **Atomic Upgrades**: Switch between configurations without risk.
 4. **Package Management**: Use a functional package manager for reproducible environments.

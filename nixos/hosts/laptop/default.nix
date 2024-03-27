@@ -3,7 +3,6 @@
 {
   imports = [
     ../../default.nix
-    ../common.nix
     ./hardware-configuration.nix
   ];
 
@@ -17,14 +16,14 @@
     videoDrivers = [ "intel" ];
   };
 
-  services.mbpfan = {
-    enable = false;
-    settings.general = {
-      low_temp = 63;
-      high_temp = 76;
-      max_temp = 88;
-    };
-  };
+  #services.mbpfan = {
+  #  enable = true;
+  #  settings.general = {
+  #    low_temp = 63;
+  #    high_temp = 76;
+  #    max_temp = 88;
+  #  };
+  #};
 
   # Required for screen-lock-on-suspend functionality.
   services.logind.extraConfig = ''

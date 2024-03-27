@@ -17,7 +17,6 @@ NixOS offers several compelling advantages over traditional Linux distributions:
 
 ## Usage
 My laptop configuration:
-
 ```
 sudo nixos-rebuild switch --flake path:.#laptop
 ```
@@ -26,3 +25,8 @@ My desktop configuration:
 ```
 sudo nixos-rebuild switch --flake path:.#desktop
 ```
+
+#
+<p align="center">
+  <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/white.png" width="50px" alt="NixOS logo"/>
+</p>

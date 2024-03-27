@@ -9,9 +9,6 @@ Configurations for different hosts.
 | `desktop`        | Configuration for my desktop machine.                 |
 | `laptop`         | Configuration for my laptop machine.                  |
 
-### Common Configuration
-
-The `common.nix` file contains configurations shared across multiple hosts.
 
 ### Desktop
 

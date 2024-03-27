@@ -20,7 +20,9 @@
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
-    shellAliases = { };
+    shellAliases = {
+      temp = "nix-shell -p";
+    };
   };
 
   programs.home-manager.enable = true;

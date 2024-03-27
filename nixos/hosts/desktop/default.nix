@@ -3,7 +3,6 @@
 {
   imports = [
     ../../default.nix
-    ../common.nix
     ./hardware-configuration.nix
   ];
 

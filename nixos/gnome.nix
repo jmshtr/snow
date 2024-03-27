@@ -2,10 +2,8 @@
 
 {
   services.xserver = { # Configuration for X server.
-    enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
-    layout = "gb";
   };
 
   nixpkgs.overlays = [ # Define package overlays for Nixpkgs.
@@ -25,20 +23,17 @@
   environment.systemPackages = (with pkgs; [
     # Essential GNOME applications and tools
     adw-gtk3                  # Adwaita GTK theme with GNOME's gtk.css
-    gnome.gnome-software      # A graphical package manager
     gnome.gnome-tweaks        # Advanced desktop configuration
+    gnome-extension-manager   # Desktop app for managing GNOME shell extensions
   ]) ++ (with pkgs.gnomeExtensions; [
     # GNOME Shell extensions
     app-hider                 # Hide running applications from the overview
-    appindicator              # Allows applications to export menus via StatusNotifier
+    appindicator              # Adds AppIndicator, KStatusNotifierItem and legacy Tray icons support to the Shell
     blur-my-shell             # Provides a blur effect for GNOME Shell
-    dash-to-panel             # Provides a traditional panel layout
-    forge                     # A simple GTK app for browsing and installing GNOME Shell extensions
     just-perfection           # Customizes various UI elements
     legacy-gtk3-theme-scheme-auto-switcher  # Automatically switch to the correct gtk.css for the selected gtk3-theme
     night-theme-switcher      # Automatically switch between light and dark themes based on sunset/sunrise times
     noannoyance-fork          # Suppress various system notifications
-    notification-banner-reloaded  # Displays a banner notification for certain events
   ]);
 
   environment.gnome.excludePackages = (with pkgs; [

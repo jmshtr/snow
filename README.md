@@ -18,12 +18,12 @@ NixOS offers several compelling advantages over traditional Linux distributions:
 ## Usage
 My laptop configuration:
 ```
-sudo nixos-rebuild switch --flake path:.#laptop
+sudo nixos-rebuild switch --flake github:jmshtr/snow#laptop
 ```
 
 My desktop configuration:
 ```
-sudo nixos-rebuild switch --flake path:.#desktop
+sudo nixos-rebuild switch --flake github:jmshtr/snow#desktop
 ```
 
 #

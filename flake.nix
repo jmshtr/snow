@@ -1,8 +1,7 @@
 {
-  description = "NixOS configuration of James Hunter";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -13,19 +12,16 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   
-    #hardware.url = "github:nixos/nixos-hardware";
-
-    #nur.url = "github:nix-community/NUR";
-
-    #spicetify-nix.url = "github:the-argus/spicetify-nix";
+  
+    #nixos-hardware.url = "github:nixos/nixos-hardware/master";
   };
 
   outputs = inputs @ { 
     self, 
     nixpkgs,
     home-manager, 
-    nix-index-database, 
+    nix-index-database,
+    #nixos-hardware,
     ... 
     }: 
   {

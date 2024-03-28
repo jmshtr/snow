@@ -1,21 +1,22 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [    
-    git               # Version control system
-    poetry            # Python dependency management tool
-    python3           # Python programming language
-    nodejs            # Node.js runtime environment
-    nodePackages.npm  # Node Package Manager
-    nodePackages.pnpm # Fast, disk space efficient package manager
-    yarn              # Fast, reliable, and secure dependency management
+  home.packages = with pkgs; [
+    github-desktop
+    git
+    nodejs
+    nodePackages.npm
+    nodePackages.pnpm
+    poetry
+    python3
+    yarn
   ];
 
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      # add extensions here
+      # TODO: add extensions here
     ];
   };
 }

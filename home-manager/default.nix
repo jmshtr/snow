@@ -14,14 +14,20 @@
 
   xdg.cacheHome = "/home/james/.local/cache";
 
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
+    syntaxHighlighting.enable = true;
     shellAliases = {
       temp = "nix-shell -p";
+      laptop = "nixos-rebuild switch --flake path:.#laptop";
+      desktop = "nixos-rebuild switch --flake path:.#desktop";
+      sudo = "sudo ";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "fishy";
     };
   };
 

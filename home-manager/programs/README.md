@@ -11,6 +11,8 @@ Directory for program-specific configurations.
 | `media.nix`             | Multimedia-related applications                      |
 | `networking.nix`        | Networking-related tools and libraries               |
 | `productivity.nix`      | Tools to enhance productivity                        |
+| `security.nix`          | Password manager and 2FA software                    |
+| `storage.nix`           | Managing storage or backups                          |
 | `system-library.nix`    | System libraries and support                         |
 | `terminal.nix`          | Shell and terminal-related utilities                 |
 | `utilities.nix`         | General-purpose utilities                            |

@@ -1,7 +1,9 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [ pulsemixer ];
+  home.packages = with pkgs; [ 
+    pulsemixer 
+  ];
 
   programs = {
     mpv = {

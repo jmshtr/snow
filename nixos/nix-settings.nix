@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Define settings for Nix.
   nix.settings = {
     trusted-users = ["james"];
     experimental-features = ["nix-command" "flakes"];

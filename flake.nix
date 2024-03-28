@@ -1,7 +1,7 @@
 {
   description = "NixOS configuration of James Hunter";
 
-  inputs = { # Inputs required for the configuration.
+  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     home-manager = {
@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+   
     #hardware.url = "github:nixos/nixos-hardware";
 
     #nur.url = "github:nix-community/NUR";
@@ -16,38 +21,57 @@
     #spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }: 
+  outputs = inputs @ { 
+    self, 
+    nixpkgs,
+    home-manager, 
+    nix-index-database, 
+    ... 
+    }: 
   {
     nixosConfigurations = {
-      # Definitions of different NixOS configurations.
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
         modules = [
-          # List of modules to include in the configuration.
           ./nixos/hosts/laptop
+          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users.james = import ./home-manager;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users = {
+                james = import ./home-manager;
+              };
+            };
+            programs = {
+              command-not-found = { enable = false; };
+              nix-index = { enable = true; };
+            };
           }
         ];
       };
 
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
         modules = [
-          # List of modules to include in the configuration.
           ./nixos/hosts/desktop
+          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users.james = import ./home-manager;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users = {
+                james = import ./home-manager;
+              };
+            };
+            programs = {
+              command-not-found = { enable = false; };
+              nix-index = { enable = true; };
+            };
           }
         ];
       };

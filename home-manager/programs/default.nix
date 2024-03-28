@@ -6,6 +6,8 @@
     ./media.nix
     ./networking.nix
     ./productivity.nix
+    ./security.nix
+    ./storage.nix
     ./system-library.nix
     ./utilities.nix
     ./web-browsers.nix

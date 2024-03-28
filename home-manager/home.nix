@@ -13,5 +13,11 @@
       name = "Sans";
       size = 11;
     };
-  };  
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-hint-font-metrics = 1
+      '';
+    };
+  };
 }

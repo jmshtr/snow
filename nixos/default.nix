@@ -13,6 +13,7 @@
     ./nixpkgs.nix
     ./security-services.nix
     ./services.nix
+    ./shell.nix
     ./sound.nix
     ./time.nix
     ./users.nix

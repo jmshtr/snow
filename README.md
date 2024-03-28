@@ -28,5 +28,6 @@ sudo nixos-rebuild switch --flake path:.#desktop
 
 #
 <p align="center">
-  <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/white.png" width="50px" alt="NixOS logo"/>
+  <img src="assets/logo/snowflake.png#gh-light-mode-only" width="50px" alt="The NixOS snowflake logo"/>
+  <img src="assets/logo/snowflake_white.png#gh-dark-mode-only" width="50px" alt="The white NixOS snowflake logo"/>
 </p>
